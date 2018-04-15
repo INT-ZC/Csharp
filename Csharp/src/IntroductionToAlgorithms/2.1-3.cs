@@ -8,14 +8,14 @@ namespace Csharp.src.IntroductionToAlgorithms
 {
     class __213
     {
-        public static int GetIndex(int[] array, int value)
+        public static string GetIndex(int[] array, int value)
         {
             for (int i = 0; i < array.Length; ++i)
             {
-                if (value == array[i]) { return i+1; }
-                else return 0;
+                if (value == array[i]) { return i.ToString(); }
+                else return "NIL";
             }
-            return 0;
+            return "NIL";
         }
     }
 }
