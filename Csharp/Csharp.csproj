@@ -101,6 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\IntroductionToAlgorithms\2.1-2.cs" />
     <Compile Include="src\IntroductionToAlgorithms\2.1-1.cs" />
+    <Compile Include="src\IntroductionToAlgorithms\2.1-3.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
