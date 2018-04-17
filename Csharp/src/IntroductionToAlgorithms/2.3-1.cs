@@ -9,7 +9,18 @@ namespace Csharp.src.IntroductionToAlgorithms
 {
     class __231
     {
-        public static void MergeSort(int[] A, int p, int q, int r)
+        public static void MergeSort(int[] A, int p, int r)
+        {
+            if (p < r)
+            {
+                int q = (p + r) / 2;
+                MergeSort(A, p, q);
+                MergeSort(A, q + 1, r);
+                Merge(A, p, q, r);
+            }
+        }
+
+        public static void Merge(int[] A, int p, int q, int r)
         {
             int n1 = q - p + 1;
             int n2 = r - q;
@@ -17,8 +28,15 @@ namespace Csharp.src.IntroductionToAlgorithms
             int[] L = new int[n1 + 1]; // The use of A, L, and R does not match the casing rule of local variable.
             int[] R = new int[n2 + 1]; // The reason why we still use it here is to match the book.
 
-            for (int i = 0; i < n1; ++i) { L[i] = A[p + i]; }
-            for (int j = 0; j < n1; ++j) { R[j] = A[q + j + 1]; }
+            for (int i = 0; i < n1; ++i)
+            {
+                L[i] = A[p + i];
+            }
+
+            for (int j = 0; j < n1; ++j)
+            {
+                R[j] = A[q + j + 1];
+            }
 
             L[n1] = int.MaxValue; // The infinity in C# is a single (floating) number, it is not possible
             R[n2] = int.MaxValue; // to convert it to an integer, so we use MaxValue here instead.
